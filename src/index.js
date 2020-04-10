@@ -22,7 +22,7 @@ function App() {
   const fetchData = async () => {
     const response = await fetch("https://jsonplaceholder.typicode.com/comments")
     const data = await response.json()
-    setComments([...comments, ...data.slice(0, 9)])
+    setComments(comments => [...comments, ...data.slice(0, 9)])
   }
 
   useEffect(() => {
